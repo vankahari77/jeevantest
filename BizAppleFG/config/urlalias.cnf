@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="tabadul/wms" javaclass="com.wm.util.Values">
+    <value name="urlPath">rest/BizAppleFG.ws.tabadulCall</value>
+    <record name="portMap" javaclass="com.wm.util.Values">
+    </record>
+  </record>
+  <record name="tabadul/wms/json" javaclass="com.wm.util.Values">
+    <value name="urlPath">restV2/BizAppleFG.ws:tabadulCallJson/tabadulCallJson</value>
+    <record name="portMap" javaclass="com.wm.util.Values">
+    </record>
+  </record>
+  <record name="b2b/apple/fetchSerialNumberMetaDataV2" javaclass="com.wm.util.Values">
+    <value name="urlPath">restV2/BizAppleFG.ws:fetchSerialNumberMetaData/fetchSerialNumberMetaData</value>
+    <record name="portMap" javaclass="com.wm.util.Values">
+    </record>
+  </record>
+  <record name="COOMetaData" javaclass="com.wm.util.Values">
+    <value name="urlPath">restV2/BizAppleFG.ws:receiveCOOMetaData/receiveCOOMetaData</value>
+    <record name="portMap" javaclass="com.wm.util.Values">
+    </record>
+  </record>
+</Values>
