@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_nsName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:docTypeRef_ns1_CreateShipmentReply</value>
+    <value name="node_pkg">BizBSkyB</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">ns1:Alerts</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.parcelforce.net/ws/ship/v12</value>
+        <value name="form_qualified">true</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:docTypeRef_ns1_Alerts</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">ns1:CompletedShipmentInfo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.parcelforce.net/ws/ship/v12</value>
+        <value name="form_qualified">true</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:docTypeRef_ns1_CompletedShipmentInfo</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">*doctype</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:docTypeRef_ns1_CreateShipmentReply</value>
+        </array>
+        <value name="nillable">false</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+    </array>
+    <record name="schemaType" javaclass="com.wm.util.Values">
+      <value name="xmlns">http://www.parcelforce.net/ws/ship/v12</value>
+      <value name="ncName">CreateShipmentReply</value>
+    </record>
+    <value name="schemaDomain">30fc8d9d6758675b158e6f07169</value>
+    <value name="schemaRegistered">true</value>
+    <value name="docTypeDomain">a0f328c0fd9516769432f0dd329ec6a4</value>
+    <value name="originURI">file://C:\Users\ne198\Desktop\ShipService_v12.wsdl</value>
+    <value name="modifiable">false</value>
+  </record>
+</Values>

@@ -1,0 +1,1377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webServiceDescriptor</value>
+  <value name="node_nsName">com.unipart.BSkyB.ws.parcelforce:parcelForceAPI</value>
+  <value name="node_pkg">BizBSkyB</value>
+  <value name="is_public">false</value>
+  <Boolean name="inbound">false</Boolean>
+  <Boolean name="WSICompliant">false</Boolean>
+  <value name="SOAPProtocol">SOAP 1.1 Protocol</value>
+  <value name="targetNamespace">http://www.parcelforce.net/ws/ship/v12</value>
+  <Boolean name="attachmentEnabled">false</Boolean>
+  <number name="mtomThreshold" type="Integer">0</number>
+  <value name="externalWSDL">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:s1="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:ns="http://www.parcelforce.net/ws/ship/v12"
+    targetNamespace="http://www.parcelforce.net/ws/ship/v12"
+    name="ShipServiceDefinitions"&gt;
+
+  &lt;types&gt;
+    &lt;xs:schema 
+    attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.parcelforce.net/ws/ship/v12"
+    xmlns:ns="http://www.parcelforce.net/ws/ship/v12"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;xs:element name="CreateShipmentRequest" type="ns:CreateShipmentRequest"/&gt;
+        &lt;xs:element name="CreateShipmentReply" type="ns:CreateShipmentReply"/&gt;
+        &lt;xs:element name="CreatePrintRequest" type="ns:CreatePrintRequest"/&gt;
+        &lt;xs:element name="CreatePrintReply" type="ns:CreatePrintReply"/&gt;
+        &lt;xs:element name="PrintLabelRequest" type="ns:PrintLabelRequest"/&gt;
+        &lt;xs:element name="PrintLabelReply" type="ns:PrintLabelReply"/&gt;
+        &lt;xs:element name="PrintDocumentRequest" type="ns:PrintDocumentRequest"/&gt;
+        &lt;xs:element name="PrintDocumentReply" type="ns:PrintDocumentReply"/&gt;
+        &lt;xs:element name="CreateManifestRequest" type="ns:CreateManifestRequest"/&gt;
+        &lt;xs:element name="CreateManifestReply" type="ns:CreateManifestReply"/&gt;
+        &lt;xs:element name="PrintManifestRequest" type="ns:PrintManifestRequest"/&gt;
+        &lt;xs:element name="PrintManifestReply" type="ns:PrintManifestReply"/&gt;
+        &lt;xs:element name="ReturnShipmentRequest" type="ns:ReturnShipmentRequest"/&gt;
+        &lt;xs:element name="ReturnShipmentReply" type="ns:ReturnShipmentReply"/&gt;
+        &lt;xs:element name="FindRequest" type="ns:FindRequest"/&gt;
+        &lt;xs:element name="FindReply" type="ns:FindReply"/&gt;
+        &lt;xs:element name="CCReserveRequest" type="ns:CCReserveRequest"/&gt;
+        &lt;xs:element name="CCReserveReply" type="ns:CCReserveReply"/&gt;
+        &lt;xs:element name="CancelShipmentRequest" type="ns:CancelShipmentRequest"/&gt;
+        &lt;xs:element name="CancelShipmentReply" type="ns:CancelShipmentReply"/&gt;
+        &lt;xs:complexType name="BaseRequest"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Authentication" type="ns:Authentication"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="BaseReply"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Alerts" type="ns:Alerts" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CreateShipmentRequest"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseRequest"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="RequestedShipment" type="ns:RequestedShipment"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CreateShipmentReply"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseReply"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="CompletedShipmentInfo" type="ns:CompletedShipmentInfo" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CreatePrintRequest"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseRequest"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="RequestedShipment" type="ns:RequestedShipment"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CreatePrintReply"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseReply"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="CompletedShipmentInfoCreatePrint" type="ns:CompletedShipmentInfoCreatePrint" minOccurs="0"/&gt;
+                  &lt;xs:element name="Label" type="ns:Document" minOccurs="0"/&gt;
+                  &lt;xs:element name="LabelData" type="ns:ShipmentLabelData" minOccurs="0"/&gt;
+                  &lt;xs:element name="PartnerCode" type="xs:string" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="PrintLabelRequest"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseRequest"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="ShipmentNumber" type="xs:string"/&gt;
+                  &lt;xs:element name="PrintFormat" type="xs:string" minOccurs="0"/&gt;
+                  &lt;xs:element name="BarcodeFormat" type="xs:string" minOccurs="0"/&gt;
+                  &lt;xs:element name="PrintType" type="ns:PrintType" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="PrintLabelReply"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseReply"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="Label" type="ns:Document" minOccurs="0"/&gt;
+                  &lt;xs:element name="LabelData" type="ns:ShipmentLabelData" minOccurs="0"/&gt;
+                  &lt;xs:element name="PartnerCode" type="xs:string" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="PrintDocumentRequest"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseRequest"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="ShipmentNumber" type="xs:string"/&gt;
+                  &lt;xs:element name="DocumentType" type="xs:integer"/&gt;
+                  &lt;xs:element name="PrintFormat" type="xs:string" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="PrintDocumentReply"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseReply"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="Label" type="ns:Document" minOccurs="0"/&gt;
+                  &lt;xs:element name="LabelData" type="ns:ShipmentLabelData" minOccurs="0"/&gt;
+                  &lt;xs:element name="DocumentType" type="ns:Document" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CreateManifestReply"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseReply"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="CompletedManifests" type="ns:CompletedManifests" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CreateManifestRequest"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseRequest"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="DepartmentId" type="xs:integer" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="PrintManifestRequest"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseRequest"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="ManifestNumber" type="xs:string"/&gt;
+                  &lt;xs:element name="PrintFormat" type="xs:string" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="PrintManifestReply"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseReply"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="Manifest" type="ns:Document" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ReturnShipmentRequest"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseRequest"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="ShipmentNumber" type="xs:string"/&gt;
+                  &lt;xs:element name="CollectionTime" type="ns:DateTimeRange"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ReturnShipmentReply"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseReply"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="CompletedShipmentInfo" type="ns:CompletedReturnInfo" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="RequestedShipment"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="DepartmentId" type="xs:integer" minOccurs="0"/&gt;
+              &lt;xs:element name="ShipmentType" type="xs:string"/&gt;
+              &lt;xs:element name="ContractNumber" type="xs:string"/&gt;
+              &lt;xs:element name="RequestId" type="xs:integer" minOccurs="0"/&gt;
+              &lt;xs:element name="ServiceCode" type="xs:string"/&gt;
+              &lt;xs:element name="PrePrinted" type="xs:boolean" minOccurs="0"/&gt;
+              &lt;xs:element name="ShippingDate" type="xs:date" minOccurs="0"/&gt;
+              &lt;xs:element name="JobReference" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="RecipientContact" type="ns:Contact"/&gt;
+              &lt;xs:element name="RecipientAddress" type="ns:Address"/&gt;
+              &lt;xs:element name="ImporterContact" type="ns:Contact" minOccurs="0"/&gt;
+              &lt;xs:element name="ImporterAddress" type="ns:Address" minOccurs="0"/&gt;
+              &lt;xs:element name="ExporterContact" type="ns:Contact" minOccurs="0"/&gt;
+              &lt;xs:element name="ExporterAddress" type="ns:Address" minOccurs="0"/&gt;
+              &lt;xs:element name="SenderContact" type="ns:Contact" minOccurs="0"/&gt;
+              &lt;xs:element name="SenderAddress" type="ns:Address" minOccurs="0"/&gt;
+              &lt;xs:element name="TotalNumberOfParcels" type="xs:integer" minOccurs="0"/&gt;
+              &lt;xs:element name="TotalShipmentWeight" type="ns:Weight" minOccurs="0"/&gt;
+              &lt;xs:element name="Enhancement" type="ns:Enhancement" minOccurs="0"/&gt;
+              &lt;xs:element name="DeliveryOptions" type="ns:DeliveryOptions" minOccurs="0"/&gt;
+              &lt;xs:element name="HazardousGoods" type="ns:HazardousGoods" minOccurs="0"/&gt;
+              &lt;xs:element name="Returns" type="ns:Returns" minOccurs="0"/&gt;
+              &lt;xs:element name="DropOffInd" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="PrintOwnLabel" type="xs:boolean" minOccurs="0"/&gt;
+              &lt;xs:element name="CollectionInfo" type="ns:CollectionInfo" minOccurs="0"/&gt;
+              &lt;xs:element name="InternationalInfo" type="ns:InternationalInfo" minOccurs="0"/&gt;
+              &lt;xs:element name="ReferenceNumber1" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ReferenceNumber2" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ReferenceNumber3" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ReferenceNumber4" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ReferenceNumber5" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SpecialInstructions1" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SpecialInstructions2" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SpecialInstructions3" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SpecialInstructions4" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="InBoundContact" type="ns:Contact" minOccurs="0"/&gt;
+              &lt;xs:element name="InBoundAddress" type="ns:Address" minOccurs="0"/&gt;
+              &lt;xs:element name="InBoundDetails" type="ns:InBoundDetails" minOccurs="0"/&gt;
+              &lt;xs:element name="ExchangeInstructions1" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ExchangeInstructions2" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ExchangeInstructions3" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ConsignmentHandling" type="xs:boolean" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Contact"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="BusinessName" type="xs:string"/&gt;
+              &lt;xs:element name="ContactName" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="EmailAddress" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Telephone" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Fax" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="MobilePhone" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SendersName" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Notifications" type="ns:Notifications" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Notifications"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="NotificationType" type="xs:string" minOccurs="1" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Address"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="AddressLine1" type="xs:string" minOccurs="1"/&gt;
+              &lt;xs:element name="AddressLine2" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="AddressLine3" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Town" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Postcode" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Country" type="xs:string" minOccurs="1"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="InBoundDetails"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ContractNumber" type="xs:string" minOccurs="1"/&gt;
+              &lt;xs:element name="ServiceCode" type="xs:string" minOccurs="1"/&gt;
+              &lt;xs:element name="TotalShipmentWeight" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Enhancement" type="ns:Enhancement" minOccurs="0" /&gt;
+              &lt;xs:element name="ReferenceNumber1" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ReferenceNumber2" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ReferenceNumber3" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ReferenceNumber4" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ReferenceNumber5" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SpecialInstructions1" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SpecialInstructions2" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SpecialInstructions3" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SpecialInstructions4" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Enhancement"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="EnhancedCompensation" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="SaturdayDeliveryRequired" type="xs:boolean" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="DeliveryOptions"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ConvenientCollect" type="ns:ConvenientCollect" minOccurs="0" /&gt;
+              &lt;xs:element name="IRTS" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="Letterbox" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="SpecifiedPostOffice" type="ns:SpecifiedPostOffice" minOccurs="0" /&gt;
+              &lt;xs:element name="SpecifiedNeighbour" type="xs:string" minOccurs="0" /&gt;
+              &lt;xs:element name="SafePlace" type="xs:string" minOccurs="0" /&gt;
+              &lt;xs:element name="PIN" type="xs:integer" minOccurs="0" /&gt;
+              &lt;xs:element name="NamedRecipient" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="AddressOnly" type="xs:boolean" minOccurs="0" /&gt;
+              &lt;xs:element name="NominatedDeliveryDate" type="xs:date" minOccurs="0" /&gt;
+              &lt;xs:element name="PersonalParcel" type="xs:string" minOccurs="0" /&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="HazardousGoods"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="HazardousGood" type="ns:HazardousGood" minOccurs="1" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="HazardousGood"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="LQDGUNCode" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="LQDGDescription" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="LQDGVolume" type= "ns:Weight" minOccurs="0"/&gt;
+              &lt;xs:element name="Firearms" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Returns"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ReturnsEmail" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="EmailMessage" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="EmailLabel" type="xs:boolean" minOccurs="1"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="InternationalInfo"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation&gt;Only for international shipments&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Parcels" type="ns:Parcels" minOccurs="0"/&gt;
+              &lt;xs:element name="ShipperExporterVatNo" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="RecipientImporterVatNo" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="OriginalExportShipmentNo" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="DocumentsOnly" type="xs:boolean" minOccurs="0"/&gt;
+              &lt;xs:element name="DocumentsDescription" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ValueUnder200USDollars" type="xs:boolean" minOccurs="0"/&gt;
+              &lt;xs:element name="ShipmentDescription" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Comments" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="InvoiceDate" type="xs:date" minOccurs="0"/&gt;
+              &lt;xs:element name="TermsOfDelivery" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="PurchaseOrderRef" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Parcels"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Parcel" type="ns:Parcel" minOccurs="1" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Parcel"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Weight" type="ns:Weight" minOccurs="0"/&gt;
+              &lt;xs:element name="Length" type="xs:positiveInteger" minOccurs="0"/&gt;
+              &lt;xs:element name="Height" type="xs:positiveInteger" minOccurs="0"/&gt;
+              &lt;xs:element name="Width" type="xs:positiveInteger" minOccurs="0"/&gt;
+              &lt;xs:element name="PurposeOfShipment" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="InvoiceNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ExportLicenseNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="CertificateNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ContentDetails" type="ns:ContentDetails" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:simpleType name="Weight"&gt;
+            &lt;xs:restriction base="xs:decimal"&gt;
+            &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+        &lt;xs:complexType name="ContentDetails"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ContentDetail" type="ns:ContentDetail" minOccurs="1" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ContentDetail"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="CountryOfManufacture" type="xs:string"/&gt;
+              &lt;xs:element name="CountryOfOrigin" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ManufacturersName" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Description" type="xs:string"/&gt;
+              &lt;xs:element name="UnitWeight" type="ns:Weight"/&gt;
+              &lt;xs:element name="UnitQuantity" type="xs:positiveInteger"/&gt;
+              &lt;xs:element name="UnitValue" type="xs:decimal"/&gt;
+              &lt;xs:element name="Currency" type="xs:string"/&gt;
+              &lt;xs:element name="TariffCode" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="TariffDescription" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ArticleReference" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CollectionInfo"&gt;
+            &lt;xs:annotation&gt;
+              &lt;xs:documentation&gt;Only required for collections&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="CollectionContact" type="ns:Contact" minOccurs="1"/&gt;
+              &lt;xs:element name="CollectionAddress" type="ns:Address" minOccurs="1"/&gt;
+              &lt;xs:element name="CollectionTime" type="ns:DateTimeRange" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="DateTimeRange"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="From" type="xs:dateTime"/&gt;
+              &lt;xs:element name="To" type="xs:dateTime"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+          &lt;xs:complexType name="ShipmentLabelData"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ParcelLabelData" type="ns:ParcelLabelData" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ParcelLabelData"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ParcelNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ShipmentNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="JourneyLeg" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="LabelData" type="ns:LabelData" minOccurs="0"/&gt;
+              &lt;xs:element name="Barcodes" type="ns:Barcodes" minOccurs="0"/&gt;
+              &lt;xs:element name="Images" type="ns:Images" minOccurs="0"/&gt;
+              &lt;xs:element name="ParcelContents" type="ns:ParcelContents" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ParcelContents"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Item" type="ns:ContentData" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ContentData"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Name" type="xs:string"/&gt;
+              &lt;xs:element name="Data" type="xs:string"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="LabelData"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Item" type="ns:LabelItem" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="LabelItem"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Name" type="xs:string"/&gt;
+              &lt;xs:element name="Data" type="xs:string"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Barcodes"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Barcode" type="ns:Barcode" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Barcode"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Name" type="xs:string"/&gt;
+              &lt;xs:element name="Data" type="xs:base64Binary"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Images"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Image" type="ns:Image" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Image"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Name" type="xs:string"/&gt;
+              &lt;xs:element name="Data" type="xs:base64Binary"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:simpleType name="PrintType"&gt;
+            &lt;xs:restriction base="xs:string"&gt;
+              &lt;xs:enumeration value="ALL_PARCELS"/&gt;
+              &lt;xs:enumeration value="SINGLE_PARCEL"/&gt;
+            &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+        &lt;xs:complexType name="Document"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Data" type="xs:base64Binary"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CompletedManifests"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="CompletedManifestInfo" type="ns:CompletedManifestInfo" minOccurs="1" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CompletedManifestInfo"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="DepartmentId" type="xs:integer" minOccurs="1"/&gt;
+              &lt;xs:element name="ManifestNumber" type="xs:string" minOccurs="1"/&gt;
+              &lt;xs:element name="ManifestType" type="xs:string" minOccurs="1"/&gt;
+              &lt;xs:element name="TotalShipmentCount" type="xs:integer" minOccurs="1"/&gt;
+              &lt;xs:element name="ManifestShipments" type="ns:ManifestShipments" minOccurs="1"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ManifestShipments"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ManifestShipment" type="ns:ManifestShipment" minOccurs="1" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ManifestShipment"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ShipmentNumber" type="xs:string"/&gt;
+              &lt;xs:element name="ServiceCode" type="xs:string"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CompletedShipmentInfo"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="LeadShipmentNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="DeliveryDate" type="xs:date" minOccurs="0"/&gt;
+              &lt;xs:element name="Status" type="xs:string"/&gt;
+              &lt;xs:element name="CompletedShipments" type="ns:CompletedShipments"/&gt;
+              &lt;xs:element name="RequestedShipment" type="ns:RequestedShipment"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CompletedShipmentInfoCreatePrint"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="LeadShipmentNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ShipmentNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="DeliveryDate" type="xs:date" minOccurs="0"/&gt;
+              &lt;xs:element name="Status" type="xs:string"/&gt;
+              &lt;xs:element name="CompletedShipments" type="ns:CompletedShipments"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CompletedShipments"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="CompletedShipment" type="ns:CompletedShipment" minOccurs="1" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CompletedShipment"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ShipmentNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="OutBoundShipmentNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="InBoundShipmentNumber" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="PartnerNumber" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CompletedReturnInfo"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Status" type="xs:string"/&gt;
+              &lt;xs:element name="ShipmentNumber" type="xs:string"/&gt;
+              &lt;xs:element name="CollectionTime" type="ns:DateTimeRange"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Authentication"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="UserName" type="xs:string"/&gt;
+              &lt;xs:element name="Password" type="xs:string"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Alerts"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Alert" type="ns:Alert" minOccurs="1" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Alert"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Code" type="xs:integer"/&gt;
+              &lt;xs:element name="Message" type="xs:string"/&gt;
+              &lt;xs:element name="Type" type="ns:AlertType"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="FindRequest"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseRequest"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="ConvenientCollect" type="ns:ConvenientCollect" minOccurs="0"/&gt;
+                  &lt;xs:element name="SpecifiedPostOffice" type="ns:SpecifiedPostOffice" minOccurs="0"/&gt;
+                  &lt;xs:element name="PAF" type="ns:PAF" minOccurs="0" /&gt;
+                  &lt;xs:element name="SafePlaces" type="xs:boolean" minOccurs="0" /&gt;
+                  &lt;xs:element name="NominatedDeliveryDates" type="ns:NominatedDeliveryDates" minOccurs="0"/&gt;
+                  &lt;xs:element name="PostcodeExclusion" type="ns:PostcodeExclusion" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="FindReply"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseReply"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="ConvenientCollect" type="ns:ConvenientCollect" minOccurs="0"/&gt;
+                  &lt;xs:element name="SpecifiedPostOffice" type="ns:SpecifiedPostOffice" minOccurs="0"/&gt;
+                  &lt;xs:element name="PAF" type="ns:PAF" minOccurs="0"/&gt;
+                  &lt;xs:element name="SafePlaceList" type="ns:SafePlaceList" minOccurs="0"/&gt;
+                  &lt;xs:element name="NominatedDeliveryDates" type="ns:NominatedDeliveryDates" minOccurs="0"/&gt;
+                  &lt;xs:element name="PostcodeExclusion" type="ns:PostcodeExclusion" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CCReserveRequest"&gt;
+            &lt;xs:complexContent&gt;
+                &lt;xs:extension base="ns:BaseRequest"&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="BookingReference" type="xs:string"/&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+       &lt;xs:complexType name="CCReserveReply"&gt;
+            &lt;xs:complexContent&gt;
+                &lt;xs:extension base="ns:BaseReply"&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="PostOffice" type="ns:PostOffice" minOccurs="0"/&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CancelShipmentRequest"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseRequest"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="ShipmentNumber" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CancelShipmentReply"&gt;
+            &lt;xs:complexContent&gt;
+              &lt;xs:extension base="ns:BaseReply"&gt;
+                &lt;xs:sequence&gt;
+                  &lt;xs:element name="CompletedCancel" type="ns:CompletedCancel" minOccurs="0"/&gt;
+                &lt;/xs:sequence&gt;
+              &lt;/xs:extension&gt;
+            &lt;/xs:complexContent&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CompletedCancel"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="CompletedCancelInfo" type="ns:CompletedCancelInfo" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="CompletedCancelInfo"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Status" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="ShipmentNumber" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ConvenientCollect"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Postcode" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="PostOffice" type="ns:PostOffice" minOccurs="0" maxOccurs="unbounded"/&gt;
+              &lt;xs:element name="Count" type="xs:integer" minOccurs="0"/&gt;
+              &lt;xs:element name="PostOfficeID" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="SpecifiedPostOffice"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Postcode" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="PostOffice" type="ns:PostOffice" minOccurs="0" maxOccurs="unbounded"/&gt;
+              &lt;xs:element name="Count" type="xs:integer" minOccurs="0"/&gt;
+              &lt;xs:element name="PostOfficeID" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="PAF"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Postcode" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Count" type="xs:integer" minOccurs="0"/&gt;
+              &lt;xs:element name="SpecifiedNeighbour" type="ns:SpecifiedNeighbour" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="SpecifiedNeighbour"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Address" type="ns:Address" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="SafePlaceList"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="SafePlace" type="xs:string" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="NominatedDeliveryDates"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ServiceCode" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Departments" type="ns:Departments" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="NominatedDeliveryDateList"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="NominatedDeliveryDate" type="xs:date" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="PostcodeExclusion"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="DeliveryPostcode" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="CollectionPostcode" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Departments" type="ns:Departments" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Departments"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Department" type="ns:Department" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Department"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="DepartmentID" type="xs:integer" minOccurs="0" maxOccurs="unbounded"/&gt;
+              &lt;xs:element name="ServiceCodes" type="ns:ServiceCodes" minOccurs="0" maxOccurs="unbounded"/&gt;
+              &lt;xs:element name="NominatedDeliveryDateList" type="ns:NominatedDeliveryDateList" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="ServiceCodes"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="ServiceCode" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="PostOffice"&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="PostOfficeID" type="xs:string" minOccurs="0"/&gt;
+                &lt;xs:element name="Business" type="xs:string" minOccurs="0"/&gt;
+                &lt;xs:element name="Address" type="ns:Address" minOccurs="0"/&gt;
+                &lt;xs:element name="OpeningHours" type="ns:OpeningHours" minOccurs="0"/&gt;
+                &lt;xs:element name="Distance" type="xs:decimal" minOccurs="0"/&gt;
+                &lt;xs:element name="Availability" type="xs:boolean" minOccurs="0"/&gt;
+                &lt;xs:element name="Position" type="ns:Position" minOccurs="0"/&gt;
+                &lt;xs:element name="BookingReference" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="OpeningHours"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Mon" type="ns:Mon" minOccurs="0"/&gt;
+              &lt;xs:element name="Tue" type="ns:Tue" minOccurs="0"/&gt;
+              &lt;xs:element name="Wed" type="ns:Wed" minOccurs="0"/&gt;
+              &lt;xs:element name="Thu" type="ns:Thu" minOccurs="0"/&gt;
+              &lt;xs:element name="Fri" type="ns:Fri" minOccurs="0"/&gt;
+              &lt;xs:element name="Sat" type="ns:Sat" minOccurs="0"/&gt;
+              &lt;xs:element name="Sun" type="ns:Sun" minOccurs="0"/&gt;
+              &lt;xs:element name="BankHol" type="ns:BankHol" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Mon"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Hours" type="ns:Hours" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Tue"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Hours" type="ns:Hours" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Wed"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Hours" type="ns:Hours" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Thu"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Hours" type="ns:Hours" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Fri"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Hours" type="ns:Hours" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Sat"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Hours" type="ns:Hours" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Sun"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Hours" type="ns:Hours" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="BankHol"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Hours" type="ns:Hours" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Hours"&gt;
+            &lt;xs:sequence&gt;
+              &lt;xs:element name="Open" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="Close" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="CloseLunch" type="xs:string" minOccurs="0"/&gt;
+              &lt;xs:element name="AfterLunchOpening" type="xs:string" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:complexType name="Position"&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="Longitude" type="xs:decimal" minOccurs="0"/&gt;
+                &lt;xs:element name="Latitude" type="xs:decimal" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+        &lt;xs:simpleType name="AlertType"&gt;
+            &lt;xs:restriction base="xs:string"&gt;
+              &lt;xs:enumeration value="ERROR"/&gt;
+              &lt;xs:enumeration value="WARNING"/&gt;
+              &lt;xs:enumeration value="NOTIFICATION"/&gt;
+            &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+    &lt;/xs:schema&gt;
+  &lt;/types&gt;
+  &lt;message name="CreateShipmentRequest"&gt;
+    &lt;part name="CreateShipmentRequest" element="ns:CreateShipmentRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="CreateShipmentReply"&gt;
+    &lt;part name="CreateShipmentReply" element="ns:CreateShipmentReply"/&gt;
+  &lt;/message&gt;
+  &lt;message name="CreatePrintRequest"&gt;
+    &lt;part name="CreatePrintRequest" element="ns:CreatePrintRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="CreatePrintReply"&gt;
+    &lt;part name="CreatePrintReply" element="ns:CreatePrintReply"/&gt;
+  &lt;/message&gt;
+  &lt;message name="PrintLabelRequest"&gt;
+    &lt;part name="PrintLabelRequest" element="ns:PrintLabelRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="PrintLabelReply"&gt;
+    &lt;part name="PrintLabelReply" element="ns:PrintLabelReply"/&gt;
+  &lt;/message&gt;
+  &lt;message name="PrintDocumentRequest"&gt;
+    &lt;part name="PrintDocumentRequest" element="ns:PrintDocumentRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="PrintDocumentReply"&gt;
+    &lt;part name="PrintDocumentReply" element="ns:PrintDocumentReply"/&gt;
+  &lt;/message&gt;
+  &lt;message name="CreateManifestRequest"&gt;
+    &lt;part name="CreateManifestRequest" element="ns:CreateManifestRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="CreateManifestReply"&gt;
+    &lt;part name="CreateManifestReply" element="ns:CreateManifestReply"/&gt;
+  &lt;/message&gt;
+  &lt;message name="PrintManifestRequest"&gt;
+    &lt;part name="PrintManifestRequest" element="ns:PrintManifestRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="PrintManifestReply"&gt;
+    &lt;part name="PrintManifestReply" element="ns:PrintManifestReply"/&gt;
+  &lt;/message&gt;
+  &lt;message name="ReturnShipmentRequest"&gt;
+    &lt;part name="ReturnShipmentRequest" element="ns:ReturnShipmentRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="ReturnShipmentReply"&gt;
+    &lt;part name="ReturnShipmentReply" element="ns:ReturnShipmentReply"/&gt;
+  &lt;/message&gt;
+  &lt;message name="FindRequest"&gt;
+    &lt;part name="FindRequest" element="ns:FindRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="FindReply"&gt;
+    &lt;part name="FindReply" element="ns:FindReply"/&gt;
+  &lt;/message&gt;
+  &lt;message name="CCReserveRequest"&gt;
+    &lt;part name="CCReserveRequest" element="ns:CCReserveRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="CCReserveReply"&gt;
+    &lt;part name="CCReserveReply" element="ns:CCReserveReply"/&gt;
+  &lt;/message&gt;
+  &lt;message name="CancelShipmentRequest"&gt;
+    &lt;part name="CancelShipmentRequest" element="ns:CancelShipmentRequest"/&gt;
+  &lt;/message&gt;
+  &lt;message name="CancelShipmentReply"&gt;
+    &lt;part name="CancelShipmentReply" element="ns:CancelShipmentReply"/&gt;
+  &lt;/message&gt;
+  &lt;portType name="ShipPortType"&gt;
+    &lt;operation name="createShipment" parameterOrder="CreateShipmentRequest"&gt;
+      &lt;input message="ns:CreateShipmentRequest"/&gt;
+      &lt;output message="ns:CreateShipmentReply"/&gt;
+    &lt;/operation&gt;
+    &lt;operation name="createPrint" parameterOrder="CreatePrintRequest"&gt;
+      &lt;input message="ns:CreatePrintRequest"/&gt;
+      &lt;output message="ns:CreatePrintReply"/&gt;
+    &lt;/operation&gt;
+    &lt;operation name="printLabel" parameterOrder="PrintLabelRequest"&gt;
+      &lt;input message="ns:PrintLabelRequest"/&gt;
+      &lt;output message="ns:PrintLabelReply"/&gt;
+    &lt;/operation&gt;
+    &lt;operation name="printDocument" parameterOrder="PrintDocumentRequest"&gt;
+      &lt;input message="ns:PrintDocumentRequest"/&gt;
+      &lt;output message="ns:PrintDocumentReply"/&gt;
+    &lt;/operation&gt;
+    &lt;operation name="createManifest" parameterOrder="CreateManifestRequest"&gt;
+      &lt;input message="ns:CreateManifestRequest"/&gt;
+      &lt;output message="ns:CreateManifestReply"/&gt;
+    &lt;/operation&gt;
+    &lt;operation name="printManifest" parameterOrder="PrintManifestRequest"&gt;
+      &lt;input message="ns:PrintManifestRequest"/&gt;
+      &lt;output message="ns:PrintManifestReply"/&gt;
+    &lt;/operation&gt;
+    &lt;operation name="returnShipment" parameterOrder="ReturnShipmentRequest"&gt;
+      &lt;input message="ns:ReturnShipmentRequest"/&gt;
+      &lt;output message="ns:ReturnShipmentReply"/&gt;
+    &lt;/operation&gt;
+    &lt;operation name="Find" parameterOrder="FindRequest"&gt;
+      &lt;input message="ns:FindRequest"/&gt;
+      &lt;output message="ns:FindReply"/&gt;
+    &lt;/operation&gt;
+    &lt;operation name="CCReserve" parameterOrder="CCReserveRequest"&gt;
+      &lt;input message="ns:CCReserveRequest"/&gt;
+      &lt;output message="ns:CCReserveReply"/&gt;
+    &lt;/operation&gt;
+    &lt;operation name="CancelShipment" parameterOrder="CancelShipmentRequest"&gt;
+      &lt;input message="ns:CancelShipmentRequest"/&gt;
+      &lt;output message="ns:CancelShipmentReply"/&gt;
+    &lt;/operation&gt;
+  &lt;/portType&gt;
+  &lt;binding name="ShipServiceSoapBinding" type="ns:ShipPortType"&gt;
+    &lt;s1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/&gt;
+    &lt;operation name="createShipment"&gt;
+      &lt;s1:operation soapAction="createShipment" style="document"/&gt;
+      &lt;input&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+    &lt;operation name="createPrint"&gt;
+      &lt;s1:operation soapAction="createPrint" style="document"/&gt;
+      &lt;input&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+    &lt;operation name="printLabel"&gt;
+      &lt;s1:operation soapAction="printLabel" style="document"/&gt;
+      &lt;input&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+    &lt;operation name="printDocument"&gt;
+      &lt;s1:operation soapAction="printDocument" style="document"/&gt;
+      &lt;input&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+    &lt;operation name="createManifest"&gt;
+      &lt;s1:operation soapAction="createManifest" style="document"/&gt;
+      &lt;input&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+    &lt;operation name="printManifest"&gt;
+      &lt;s1:operation soapAction="printManifest" style="document"/&gt;
+      &lt;input&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+    &lt;operation name="returnShipment"&gt;
+      &lt;s1:operation soapAction="returnShipment" style="document"/&gt;
+      &lt;input&gt;
+    &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+    &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+    &lt;operation name="Find"&gt;
+      &lt;s1:operation soapAction="Find" style="document"/&gt;
+      &lt;input&gt;
+    &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+    &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+    &lt;operation name="CCReserve"&gt;
+      &lt;s1:operation soapAction="CCReserve" style="document"/&gt;
+      &lt;input&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+        &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+    &lt;operation name="CancelShipment"&gt;
+      &lt;s1:operation soapAction="CancelShipment" style="document"/&gt;
+      &lt;input&gt;
+    &lt;s1:body use="literal"/&gt;
+      &lt;/input&gt;
+      &lt;output&gt;
+    &lt;s1:body use="literal"/&gt;
+      &lt;/output&gt;
+    &lt;/operation&gt;
+  &lt;/binding&gt;
+  &lt;service name="ShipService"&gt;
+    &lt;port name="ShipServicePort" binding="ns:ShipServiceSoapBinding"&gt;
+      &lt;s1:address location="https://expresslink.cav-dev-pfwweb-1.technodiva.com:54443/ws/"/&gt;
+    &lt;/port&gt;
+  &lt;/service&gt;
+&lt;/definitions&gt;
+</value>
+  <value name="externalWSDLURL">file:/C:/Users/ne198/Desktop/ShipService_v12.wsdl</value>
+  <value name="WSDLURL">http://SRV451.ugc:5555/ws/com.unipart.BSkyB.ws.parcelforce:parcelForceAPI?WSDL</value>
+  <value name="definitionName">ShipServiceDefinitions</value>
+  <value name="version">_9_5</value>
+  <value name="schemaDomain">30fc8d9d6758675b158e6f07169</value>
+  <Boolean name="rawArray">true</Boolean>
+  <array name="handlerList" type="record" depth="1">
+  </array>
+  <array name="binderList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="binderName">ShipServiceSoapBinding</value>
+      <value name="portAddress">https://expresslink.cav-dev-pfwweb-1.technodiva.com:54443/ws/</value>
+      <value name="bindingName">ShipServiceSoapBinding</value>
+      <value name="bindingStyle">document</value>
+      <value name="bindingUse">literal</value>
+      <value name="bindingType">SOAP</value>
+      <value name="portName">ShipServicePort</value>
+      <value name="portTypeName">ShipPortType</value>
+      <value name="bindingTransport">http://schemas.xmlsoap.org/soap/http</value>
+      <value name="transportType">https</value>
+      <record name="operationMap" javaclass="com.wm.util.Values">
+        <value name="returnShipment">returnShipment</value>
+        <value name="createPrint">createPrint</value>
+        <value name="CCReserve">CCReserve</value>
+        <value name="Find">Find</value>
+        <value name="printManifest">printManifest</value>
+        <value name="createShipment">createShipment</value>
+        <value name="printLabel">printLabel</value>
+        <value name="CancelShipment">CancelShipment</value>
+        <value name="createManifest">createManifest</value>
+        <value name="printDocument">printDocument</value>
+      </record>
+      <value name="SOAPProtocol">SOAP 1.1 Protocol</value>
+      <value name="SOAPDirective">ws</value>
+      <Boolean name="useCSQ">false</Boolean>
+    </record>
+  </array>
+  <array name="operationList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">createShipment</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_createShipment</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_createShipment_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createShipment_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createShipment_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_createShipment_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createShipment_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createShipment_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">createPrint</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_createPrint</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_createPrint_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createPrint_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createPrint_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_createPrint_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createPrint_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createPrint_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">printLabel</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_printLabel</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_printLabel_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printLabel_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printLabel_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_printLabel_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printLabel_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printLabel_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">printDocument</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_printDocument</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_printDocument_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printDocument_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printDocument_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_printDocument_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printDocument_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printDocument_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">createManifest</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_createManifest</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_createManifest_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createManifest_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createManifest_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_createManifest_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createManifest_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_createManifest_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">printManifest</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_printManifest</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_printManifest_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printManifest_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printManifest_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_printManifest_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printManifest_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_printManifest_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">returnShipment</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_returnShipment</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_returnShipment_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_returnShipment_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_returnShipment_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_returnShipment_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_returnShipment_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_returnShipment_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">Find</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_Find</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_Find_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_Find_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_Find_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_Find_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_Find_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_Find_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">CCReserve</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_CCReserve</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_CCReserve_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_CCReserve_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_CCReserve_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_CCReserve_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_CCReserve_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_CCReserve_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">CancelShipment</value>
+      <value name="serviceName">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.connectors:ShipPortType_CancelShipment</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_CancelShipment_Input</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_CancelShipment_Input</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_CancelShipment_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://www.parcelforce.net/ws/ship/v12:ShipPortType_CancelShipment_Output</value>
+          <value name="docType">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_CancelShipment_Output</value>
+          <value name="nsOwner">com.unipart.BSkyB.ws.parcelforce.parcelForceAPI_.docTypes:ShipPortType_CancelShipment_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+  </array>
+  <record name="namespaces" javaclass="com.wm.util.Values">
+    <value name="">http://schemas.xmlsoap.org/wsdl/</value>
+    <value name="ns">http://www.parcelforce.net/ws/ship/v12</value>
+    <value name="s1">http://schemas.xmlsoap.org/wsdl/soap/</value>
+  </record>
+  <Boolean name="HeadersInPipelineEnabled">false</Boolean>
+  <Boolean name="validateSOAPResponse">true</Boolean>
+  <Boolean name="validateSchemaUsingXerces">true</Boolean>
+  <Boolean name="enableCompatibility">false</Boolean>
+  <Boolean name="registerDoctypes">true</Boolean>
+  <Boolean name="allTypes">false</Boolean>
+  <Boolean name="generateXOPObjectForBase64Binary">false</Boolean>
+  <value name="originURI">file://C:\Users\ne198\Desktop\ShipService_v12.wsdl</value>
+  <value name="modifiable">false</value>
+  <value name="externalServiceName">{http://www.parcelforce.net/ws/ship/v12}ShipService</value>
+  <null name="policyAttachmentList"/>
+  <Boolean name="filterLoginCredentials">false</Boolean>
+</Values>

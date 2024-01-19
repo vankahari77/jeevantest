@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">datePatternConversion</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgY3Vyc29yID0gbnVsbDsgIA0KdHJ5ICANCnsgIA0KCVN0cmluZyByZXN1bHQ9
+IiI7DQogICAgU2ltcGxlRGF0ZUZvcm1hdCBzZGY7DQogICAgU2ltcGxlRGF0ZUZvcm1hdCBzZGYx
+Ow0KICANCiAgICAJU3RyaW5nIGRhdGVTdHIgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nKCBjdXJzb3Is
+ICJkYXRlU3RyIiApOyANCiAgICAJc2RmID0gbmV3IFNpbXBsZURhdGVGb3JtYXQoInl5eXktTU0t
+ZGQgaGg6bW06c3MuU1NTIik7DQogICAgICAgIHNkZjEgPSBuZXcgU2ltcGxlRGF0ZUZvcm1hdCgi
+eXl5eS1NTS1kZCdUJ2hoOm1tOnNzIik7DQogICAgICAgIHJlc3VsdD1zZGYxLmZvcm1hdChzZGYu
+cGFyc2UoZGF0ZVN0cikpOw0KICAgSURhdGFVdGlsLnB1dCggY3Vyc29yLCAicmVzdWx0IiwgcmVz
+dWx0ICk7ICANCn0gIA0KY2F0Y2goIFRocm93YWJsZSB0ICkgIA0KeyAgDQogICB0aHJvdyBuZXcg
+U2VydmljZUV4Y2VwdGlvbiggdCApOyAgDQp9ICANCg0KCQ==</value>
+</Values>

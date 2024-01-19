@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="listeners" javaclass="com.wm.util.Values">
+    <record name="FilePollingListener:wmData/bskyb/SMART/in@SmartPalletClosure*" javaclass="com.wm.util.Values">
+      <value name="port">wmData/bskyb/SMART/in@SmartPalletClosure*</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">FilePollingListener:wmData/bskyb/SMART/in@SmartPalletClosure*</value>
+      <value name="portAlias">SMART_Interfaces_PalletClosure</value>
+      <value name="portDescription">SMART Interface - Pallet Closure</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/bskyb/SMART/in</value>
+      <value name="workDir">wmData/bskyb/SMART/work</value>
+      <value name="completionDir">wmData/bskyb/SMART/done</value>
+      <value name="errorDir">wmData/bskyb/SMART/error</value>
+      <value name="fileNameFilter">SmartPalletClosure*</value>
+      <value name="fileAge">60</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">Administrator</value>
+      <value name="processingService">com.unipart.BSkyB.pub.services:processBSB_SMARTPalletClosure</value>
+      <value name="filePollingInterval">1</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">90</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">1</value>
+      <value name="maxFilesPerCycle">5</value>
+      <value name="lockFileExtension">.lock</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/SMART/in@Serial_Number*" javaclass="com.wm.util.Values">
+      <value name="port">wmData/bskyb/SMART/in@Serial_Number*</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">FilePollingListener:wmData/bskyb/SMART/in@Serial_Number*</value>
+      <value name="portAlias">SMART_Interface_SerialNumber</value>
+      <value name="portDescription">SMART Serial Number</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/bskyb/SMART/in</value>
+      <value name="workDir">wmData/bskyb/SMART/work</value>
+      <value name="completionDir">wmData/bskyb/SMART/done</value>
+      <value name="errorDir">wmData/bskyb/SMART/error</value>
+      <value name="fileNameFilter">Serial_Number*</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">Administrator</value>
+      <value name="processingService">com.unipart.BSkyB.pub.services:processBSB_SerialNumber</value>
+      <value name="filePollingInterval">1</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">90</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">1</value>
+      <value name="maxFilesPerCycle">5</value>
+      <value name="lockFileExtension">.lock</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/ASN/in@*.xml" javaclass="com.wm.util.Values">
+      <value name="port">wmData/bskyb/ASN/in@*.xml</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">FilePollingListener:wmData/bskyb/ASN/in@*.xml</value>
+      <value name="portAlias">SerialNumber_FilePoller</value>
+      <value name="portDescription">Serial Number File Poller</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/bskyb/ASN/in</value>
+      <value name="workDir">wmData/bskyb/ASN/work</value>
+      <value name="completionDir">wmData/bskyb/ASN/done</value>
+      <value name="errorDir">wmData/bskyb/ASN/error</value>
+      <value name="fileNameFilter">*.xml</value>
+      <value name="fileAge">5</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">Administrator</value>
+      <value name="processingService">com.unipart.BSkyB.pub.services:processBSB_SerialNumber</value>
+      <value name="filePollingInterval">5</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">90</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">1</value>
+      <value name="maxFilesPerCycle">5</value>
+      <value name="lockFileExtension">.lock</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/in" javaclass="com.wm.util.Values">
+      <value name="port">wmData/bskyb/in</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">FilePollingListener:wmData/bskyb/in</value>
+      <value name="portAlias">BSkyb_In</value>
+      <value name="portDescription">BSkyb In</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/bskyb/in</value>
+      <value name="workDir">wmData/bskyb/work</value>
+      <value name="completionDir">wmData/bskyb/done</value>
+      <value name="errorDir">wmData/bskyb/error</value>
+      <value name="fileAge">5</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">Administrator</value>
+      <value name="processingService">com.unipart.BSkyB.priv.services:loadBSBFiles</value>
+      <value name="filePollingInterval">2</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">90</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">1</value>
+      <value name="maxFilesPerCycle">25</value>
+      <value name="lockFileExtension">.lock</value>
+    </record>
+    <record name="FilePollingListener:wmData/skyCommonASN/in@*.*" javaclass="com.wm.util.Values">
+      <value name="port">wmData/skyCommonASN/in@*.*</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">FilePollingListener:wmData/skyCommonASN/in@*.*</value>
+      <value name="portAlias">BizAdvShippingNotification</value>
+      <value name="portDescription">Integration Server FilePolling port: 0</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/skyCommonASN/in</value>
+      <value name="workDir">wmData/skyCommonASN/work</value>
+      <value name="completionDir">wmData/skyCommonASN/done</value>
+      <value name="errorDir">wmData/skyCommonASN/error</value>
+      <value name="fileNameFilter">*.*</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">Administrator</value>
+      <value name="processingService">com.unipart.BSkyB.priv.services:processBSB_AdvShippingNotification</value>
+      <value name="filePollingInterval">1</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">7</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">1</value>
+      <value name="maxFilesPerCycle">-1</value>
+      <value name="lockFileExtension">.lock</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/appleASN/monitor@*.txt" javaclass="com.wm.util.Values">
+      <value name="port">wmData/bskyb/appleASN/monitor@*.txt</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">FilePollingListener:wmData/bskyb/appleASN/monitor@*.txt</value>
+      <value name="portAlias">SKY_APPLE_ASN</value>
+      <value name="portDescription">Integration Server FilePolling port: 0</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/bskyb/appleASN/monitor</value>
+      <value name="fileNameFilter">*.txt</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">sky_schedule</value>
+      <value name="processingService">com.unipart.BSkyB.priv.services:processAppleASNFile</value>
+      <value name="filePollingInterval">10</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">7</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">3</value>
+      <value name="maxFilesPerCycle">3</value>
+      <value name="lockFileExtension">.lock</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/orderCancellations/in@*.*" javaclass="com.wm.util.Values">
+      <value name="port">wmData/bskyb/orderCancellations/in@*.*</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">true</value>
+      <value name="key">FilePollingListener:wmData/bskyb/orderCancellations/in@*.*</value>
+      <value name="portAlias">Sky_Order_cancellations</value>
+      <value name="portDescription">Integration Server FilePolling port: 0</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/bskyb/orderCancellations/in</value>
+      <value name="workDir">wmData/bskyb/orderCancellations/work</value>
+      <value name="completionDir">wmData/bskyb/orderCancellations/done</value>
+      <value name="errorDir">wmData/bskyb/orderCancellations/error</value>
+      <value name="fileNameFilter">*.*</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">sky_filepoller</value>
+      <value name="processingService">com.unipart.BSkyB.pub.services:processSkyCancellations</value>
+      <value name="filePollingInterval">60</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">30</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">1</value>
+      <value name="maxFilesPerCycle">1</value>
+      <value name="lockFileExtension">.lck</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/incoming/manualtrackevents/monitor@*.csv" javaclass="com.wm.util.Values">
+      <value name="port">wmData/bskyb/incoming/manualtrackevents/monitor@*.csv</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">FilePollingListener:wmData/bskyb/incoming/manualtrackevents/monitor@*.csv</value>
+      <value name="portAlias">Spoof_Missing_Carrier_Events</value>
+      <value name="portDescription">Spoof missing orders for SKY</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/bskyb/incoming/manualtrackevents/monitor</value>
+      <value name="workDir">wmData/bskyb/incoming/manualtrackevents/work</value>
+      <value name="completionDir">wmData/bskyb/incoming/manualtrackevents/done</value>
+      <value name="errorDir">wmData/bskyb/incoming/manualtrackevents/error</value>
+      <value name="fileNameFilter">*.csv</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">sky_filepoller</value>
+      <value name="processingService">com.unipart.BSkyB.priv.filePoller:createMissingCarrierEvents</value>
+      <value name="filePollingInterval">60</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">7</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">3</value>
+      <value name="maxFilesPerCycle">-1</value>
+      <value name="lockFileExtension">.lock</value>
+    </record>
+    <record name="HTTPSListener@6650" javaclass="com.wm.util.Values">
+      <number name="port" type="Integer">6650</number>
+      <value name="protocol">HTTPS</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">HTTPSListener@6650</value>
+      <value name="uniqueID">73cf24fb9eb82c716f1b2ff0ad</value>
+      <value name="portAlias">BSkyB_Store</value>
+      <value name="portDescription">Integration Server HTTPS port: 6650</value>
+      <value name="factoryKey">webMethods/HTTP</value>
+      <value name="configURL">/WmRoot/configHTTP.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="listenerType">Regular</value>
+      <value name="clientAuth">none</value>
+      <value name="idProvider">salesforce.com</value>
+      <value name="ssl">true</value>
+      <value name="maxQueue">200</value>
+      <value name="keepAliveTimeout">20000</value>
+      <value name="internalPort">-1</value>
+      <value name="curDelay">0</value>
+      <value name="stepsize">10000</value>
+      <value name="suspended">false</value>
+      <value name="alias">*.test.ulb2b.unipart.com (thawte rsa ca 2018)</value>
+      <value name="keyStore">UNIPART</value>
+      <value name="trustStore">UNIPART</value>
+      <value name="useJSSE">true</value>
+      <null name="jsseEnabledProtocols"/>
+    </record>
+    <record name="FilePollingListener:wmData/skyCommonASNSkyOnly/in@*.xml" javaclass="com.wm.util.Values">
+      <value name="port">wmData/skyCommonASNSkyOnly/in@*.xml</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">FilePollingListener:wmData/skyCommonASNSkyOnly/in@*.xml</value>
+      <value name="portAlias">BizAdvShippingNotificationSkyOnly</value>
+      <value name="portDescription">Integration Server FilePolling port: 0</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/skyCommonASNSkyOnly/in</value>
+      <value name="workDir">wmData/skyCommonASNSkyOnly/work</value>
+      <value name="completionDir">wmData/skyCommonASNSkyOnly/done</value>
+      <value name="errorDir">wmData/skyCommonASNSkyOnly/error</value>
+      <value name="fileNameFilter">*.xml</value>
+      <value name="fileAge">30</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">Administrator</value>
+      <value name="processingService">com.unipart.BSkyB.priv.services:processBSB_AdvShippingNotification_SKY</value>
+      <value name="filePollingInterval">5</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">7</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">1</value>
+      <value name="maxFilesPerCycle">1</value>
+      <value name="lockFileExtension">.lock</value>
+    </record>
+    <record name="FilePollingListener:wmData/skyCommonASNSkyReco/in@*.*" javaclass="com.wm.util.Values">
+      <value name="port">wmData/skyCommonASNSkyReco/in@*.*</value>
+      <value name="protocol">FilePolling</value>
+      <value name="pkg">BizBSkyB</value>
+      <value name="enabled">false</value>
+      <value name="key">FilePollingListener:wmData/skyCommonASNSkyReco/in@*.*</value>
+      <value name="portAlias">BizAdvShippingNotificationSkyReco</value>
+      <value name="portDescription">Integration Server FilePolling port: 0</value>
+      <value name="factoryKey">webMethods/FilePolling</value>
+      <value name="configURL">/WmFlatFile/configFilePolling.dsp</value>
+      <value name="provider">webMethods</value>
+      <value name="monitorDir">wmData/skyCommonASNSkyReco/in</value>
+      <value name="workDir">wmData/skyCommonASNSkyReco/work</value>
+      <value name="completionDir">wmData/skyCommonASNSkyReco/done</value>
+      <value name="errorDir">wmData/skyCommonASNSkyReco/error</value>
+      <value name="fileNameFilter">*.*</value>
+      <value name="fileAge">15</value>
+      <value name="recursive">no</value>
+      <value name="clusterEnabled">no</value>
+      <value name="cleanupAtStartup">yes</value>
+      <value name="runUser">Administrator</value>
+      <value name="processingService">com.unipart.BSkyB.priv.services:processBSB_AdvShippingNotification_SKYRECO</value>
+      <value name="filePollingInterval">5</value>
+      <value name="logMinMessage">no</value>
+      <value name="NFSDirectories">no</value>
+      <value name="cleanUpFileAge">7</value>
+      <value name="cleanUpInterval">24</value>
+      <value name="maxThreads">1</value>
+      <value name="maxFilesPerCycle">1</value>
+      <value name="lockFileExtension">.lock</value>
+    </record>
+  </record>
+  <record name="access" javaclass="com.wm.util.Values">
+    <record name="FilePollingListener:wmData/bskyb/SMART/in@SmartPalletClosure*" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">include</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/bskyb/SMART/in@SmartPalletClosure*</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/SMART/in@Serial_Number*" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">include</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/bskyb/SMART/in@Serial_Number*</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/ASN/in@*.xml" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">include</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/bskyb/ASN/in@*.xml</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/in" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">include</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/bskyb/in</value>
+    </record>
+    <record name="FilePollingListener:wmData/skyCommonASN/in@*.*" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">include</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/skyCommonASN/in@*.*</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/appleASN/monitor@*.txt" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">exclude</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+          <value>wm.server:disconnect</value>
+          <value>wm.server.csrfguard:replaceSpecialCharacters</value>
+          <value>wm.server:ping</value>
+          <value>wm.server.tx:end</value>
+          <value>wm.server:getClusterNodes</value>
+          <value>wm.server:getServerNodes</value>
+          <value>wm.server:noop</value>
+          <value>wm.server.tx:execute</value>
+          <value>wm.server.tx:start</value>
+          <value>com.unipart.BSkyB.priv.services:processAppleASNFile</value>
+          <value>wm.server:connect</value>
+          <value>wm.server.tx:restart</value>
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/bskyb/appleASN/monitor@*.txt</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/orderCancellations/in@*.*" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">include</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/bskyb/orderCancellations/in@*.*</value>
+    </record>
+    <record name="FilePollingListener:wmData/bskyb/incoming/manualtrackevents/monitor@*.csv" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">exclude</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+          <value>wm.server.csrfguard:replaceSpecialCharacters</value>
+          <value>wm.server:disconnect</value>
+          <value>wm.server:ping</value>
+          <value>wm.server.tx:end</value>
+          <value>wm.server:getClusterNodes</value>
+          <value>wm.server:getServerNodes</value>
+          <value>com.unipart.BSkyB.priv.filePoller:createMissingCarrierEvents</value>
+          <value>wm.server.csrfguard:isCSRFGuardEnabled</value>
+          <value>wm.server:noop</value>
+          <value>wm.server.csrfguard:getCSRFSecretToken</value>
+          <value>wm.server.tx:execute</value>
+          <value>wm.server.tx:start</value>
+          <value>wm.server:connect</value>
+          <value>wm.server.tx:restart</value>
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/bskyb/incoming/manualtrackevents/monitor@*.csv</value>
+    </record>
+    <record name="HTTPSListener@6650" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">exclude</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+          <value>com.unipart.BSkyB.pub.services.loadProduct:_post</value>
+          <value>wm.server.csrfguard:replaceSpecialCharacters</value>
+          <value>wm.server:disconnect</value>
+          <value>wm.server:ping</value>
+          <value>wm.server.tx:end</value>
+          <value>Test_Dev.Malcolm.CorporateMobileAPI.receiveShipmentUpdates:_post</value>
+          <value>wm.server:getClusterNodes</value>
+          <value>wm.server:getServerNodes</value>
+          <value>BizBSkyBCorporateMobileAPI.pub.externalRequests.receiveShipmentRequest:_post</value>
+          <value>wm.server.csrfguard:isCSRFGuardEnabled</value>
+          <value>wm.server:noop</value>
+          <value>wm.server.csrfguard:getCSRFSecretToken</value>
+          <value>wm.server.tx:execute</value>
+          <value>wm.server.tx:start</value>
+          <value>wm.server:connect</value>
+          <value>wm.server.tx:restart</value>
+        </list>
+      </record>
+      <value name="key">HTTPSListener@6650</value>
+    </record>
+    <record name="FilePollingListener:wmData/skyCommonASNSkyOnly/in@*.xml" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">include</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/skyCommonASNSkyOnly/in@*.xml</value>
+    </record>
+    <record name="FilePollingListener:wmData/skyCommonASNSkyReco/in@*.*" javaclass="com.wm.util.Values">
+      <null name="home"/>
+      <value name="default">include</value>
+      <record name="nodes" javaclass="com.wm.util.StringSet">
+        <list name="elements">
+        </list>
+      </record>
+      <value name="key">FilePollingListener:wmData/skyCommonASNSkyReco/in@*.*</value>
+    </record>
+  </record>
+</Values>
